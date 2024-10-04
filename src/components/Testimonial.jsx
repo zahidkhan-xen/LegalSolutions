@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import test1 from '../assets/images/testimonial-1.jpg'
 import "swiper/css";
 import "swiper/css/navigation";
@@ -38,39 +38,48 @@ const testimonials = [
 ];
 
 const Testimonial = () => {
-  return (
-    <div className="slider-1 py-32 bg-gray-100">
-      <div className="container px-4 sm:px-8">
-        <h2 className="mb-12 text-center lg:max-w-xl lg:mx-auto">
-          What do users think about Pavo
-        </h2>
-
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation
-          className="card-slider"
-        >
-          {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <div className="card">
-                <img
-                  className="card-image"
-                  src={testimonial.image}
-                  alt={`Testimonial ${index + 1}`}
-                />
-                <div className="card-body">
-                  <p className="italic mb-3">{testimonial.text}</p>
-                  <p className="testimonial-author">{testimonial.author}</p>
+    return (
+      <div className="py-32 bg-gray-100">
+        <div className="container px-4 sm:px-8">
+          <h2 className="mb-12 text-center text-4xl font-bold lg:max-w-5xl lg:mx-auto">
+            What do users think about Ehsaantech Legal AI Services
+          </h2>
+  
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={20}
+            slidesPerView={3}
+            navigation
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
+            }}
+            className=""
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <div className="card flex flex-col items-center justify-center  px-14">
+                  <img
+                    className="card-image w-24 h-24 rounded-full object-cover mb-4"
+                    src={testimonial.image}
+                    alt={`Testimonial ${index + 1}`}
+                  />
+                  <div className="text-center w-lg">
+                    <p className="italic mb-3 text-gray-700">{testimonial.text}</p>
+                    <p className="font-semibold text-gray-900">{testimonial.author}</p>
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </div>
-  );
-};
-
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>        
+    );
+  };
+  
 export default Testimonial;

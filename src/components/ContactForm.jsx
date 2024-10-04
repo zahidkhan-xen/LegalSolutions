@@ -133,7 +133,7 @@ const ContactForm = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500"
+                  className="btn-solid-lg"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Submitting..." : "Book Reservation"}

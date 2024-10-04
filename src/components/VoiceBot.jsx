@@ -1,13 +1,11 @@
-// import heroLogo from "../assets/images/chef-cartoon-png-clipart-removebg-preview.png";
 import ReservationForm from "./ReservationForm";
 const VoiceBot = () => {
     return (
-    //   <header
-    //     id="header"
-    //     className="header py-28 text-center md:pt-36 lg:text-center xl:pt-44 xl:pb-32"
-    //   >
-        <div className="container px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
-          <div className="mb-16  xl:mt-40 xl:mr-12">
+      <div
+        className="py-28 text-center md:pt-36 lg:text-center xl:pt-44 xl:pb-32"
+      >
+         <div className="container px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
+         <div className="flex flex-col justify-center text-center lg:text-left xl:mr-12">
           <h1 className="h1-large mb-5 font-semibold">Voice Bot</h1>
             <h1 className="text-4xl mb-5">Never Miss a Client’s Call Again</h1>
             <h2 className="p-large mb-8">
@@ -26,7 +24,7 @@ const VoiceBot = () => {
             <ReservationForm />
           </div>
         </div>
-    //   </header>
+    </div>
     );
   };
   

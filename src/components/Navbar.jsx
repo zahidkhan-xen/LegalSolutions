@@ -2,7 +2,7 @@ import logo from "../assets/images/ET-logo-removebg-preview.png";
 
 const Navbar = () => {
   return (
-    <nav className="navbar fixed-top z-50 bg-white">
+    <nav className="navbar fixed-top z-1 bg-white">
       <div className="container sm:px-4 lg:px-8 flex flex-wrap items-center justify-between lg:flex-nowrap">
         <a
           className="inline-block mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline"
@@ -10,7 +10,7 @@ const Navbar = () => {
         >
           <img src={logo} alt="alternative" className="h-12" />
         </a>
-        <span className="text-xl">Ehsaan Voice AI</span>
+        <span className="text-xl">Ehsaan Legal AI Solutions</span>
         <button
           className="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline lg:hidden lg:text-gray-400"
           type="button"
