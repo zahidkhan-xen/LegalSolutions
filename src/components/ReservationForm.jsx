@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
+import { AiOutlineClose } from "react-icons/ai"; // Import close icon from react-icons
 
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
-const ReservationForm = () => {
+const ReservationForm = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [name, setName] = useState("");
@@ -20,9 +22,9 @@ const ReservationForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: name,
-          email: email,
-          phone: phone,
+          name,
+          email,
+          phone,
         }),
       });
 
@@ -40,49 +42,63 @@ const ReservationForm = () => {
       setIsSubmitting(false);
       setEmail("");
       setPhone("");
-      event.target.reset();
+      setName("");
+      e.target.reset();
+    }
+  };
+
+  // Function to handle clicks on the overlay to close the modal
+  const handleOverlayClick = (e) => {
+    // Close the modal only if the click is on the overlay
+    if (e.target.id === "overlay") {
+      onClose();
     }
   };
 
   return (
-    <div id="reservation" className="py-24 text-center">
-      <div className="container mx-auto px-4 sm:px-8 xl:px-4">
-        <div className="card mx-auto max-w-3xl p-8 bg-blue-50 border border-gray-200 shadow-md rounded-lg">
-          <div className="card-body">
+    <div>
+      {isOpen && (
+        <div
+          id="overlay" // Overlay id for click detection
+          className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 mt-12"
+          onClick={handleOverlayClick} // Add click event handler
+        >
+          <div className="bg-blue-50 border border-gray-200 shadow-md rounded-lg p-8 max-w-md w-full h-[440px] relative overflow-hidden">
+            {/* Close Icon */}
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 text-gray-700 hover:text-gray-900"
+            >
+              <AiOutlineClose size={24} />
+            </button>
+
             <h5 className="text-2xl font-bold mb-4 text-center">
-              Book Your Reservation
+              Book Your Appointment
             </h5>
-            {/* <p className="mb-8 text-center">
-              Please fill out the form below to book a reservation through
-              Ehsaan Voice AI. Our AI voice agent will contact you shortly to
-              confirm the details.
-            </p> */}
 
             {message && (
               <p className="mb-4 text-center text-green-500">{message}</p>
             )}
 
             <form id="contactForm" onSubmit={handleSubmit}>
-
-            <div className="mb-6">
+              {/* <div className="mb-6">
                 <label
-                  htmlFor="phone"
+                  htmlFor="name"
                   className="block text-gray-700 text-left mb-2"
                 >
                   Name
                 </label>
                 <input
-                  type="name"
+                  type="text"
                   className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                   id="name"
                   placeholder="Enter your name"
-                  value={phone}
+                  value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
                 />
-              </div>
+              </div> */}
 
-             
               <div className="mb-6">
                 <label
                   htmlFor="email"
@@ -119,20 +135,19 @@ const ReservationForm = () => {
                 />
               </div>
 
-
               <div className="text-center">
                 <button
                   type="submit"
                   className="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Submitting..." : "Book Reservation"}
+                  {isSubmitting ? "Submitting..." : "Book Appointment"}
                 </button>
               </div>
             </form>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -1,5 +1,3 @@
-// import heroLogo from "../assets/images/chef-cartoon-png-clipart-removebg-preview.png";
-import ReservationForm from "./ReservationForm";
 const VoiceBot = () => {
     return (
     //   <header
@@ -23,7 +21,7 @@ const VoiceBot = () => {
           </div>
           <div className="xl:text-right">
             {/* <img className="inline" src={heroLogo} alt="alternative" /> */}
-            <ReservationForm />
+            {/* <ReservationForm /> */}
           </div>
         </div>
     //   </header>

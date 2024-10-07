@@ -4,7 +4,7 @@ const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
 const ContactForm = () => {
   const [email, setEmail] = useState("");
-  const [lawfirmName, setLawFirmName] = useState("");
+  const [lawFirmName, setLawFirmName] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -15,7 +15,7 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${baseUrl}/voice-agent/calls/restaurant`, {
+      const response = await fetch(`${baseUrl}/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -23,18 +23,19 @@ const ContactForm = () => {
         body: JSON.stringify({
           name: name,
           email: email,
-          lawfirmName: lawfirmName,
+          lawFirmName: lawFirmName,
           description: description,
+          
         }),
       });
 
       if (response.ok) {
         setMessage(
-          "Reservation request sent successfully. The AI voice agent will contact you soon!"
+          "Thank you for contacting us! Your message has been successfully sent, and our team will get back to you shortly."
         );
       } else {
         const errorData = await response.json();
-        setMessage(`Failed to send reservation request: ${errorData.message}`);
+        setMessage(`${errorData.message}`);
       }
     } catch (error) {
       setMessage(`Error occurred: ${error.message}`);
@@ -113,7 +114,7 @@ const ContactForm = () => {
                   className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
                   id="lawfirmName"
                   placeholder="Enter your Law firm name"
-                  value={lawfirmName}
+                  value={lawFirmName}
                   onChange={(e) => setLawFirmName(e.target.value)}
                   required
                 />
@@ -133,10 +134,10 @@ const ContactForm = () => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500"
+                  className="btn-solid-lg"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Submitting..." : "Book Reservation"}
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
               </div>
             </form>

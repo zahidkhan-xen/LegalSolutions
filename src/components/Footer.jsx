@@ -1,13 +1,13 @@
 import ContactForm from "./ContactForm";
-
 const Footer = () => {
   return (
     <div className="footer">
       <div className="container px-4 sm:px-8">
-      <a className="btn-solid-lg" href="#reservation">
-      Want to Learn More? Get in Touch!
-          </a>
-          <ContactForm />
+          <div >
+            <ContactForm />
+          </div>
+        </div>
+
         <h4 className="mb-8 lg:max-w-3xl lg:mx-auto">
           Ehsaan Technologies is a Software Development & Consultancy firm
           providing customized Web development and Mobile App development
@@ -52,7 +52,6 @@ const Footer = () => {
           </span>
         </div>
       </div>
-    </div>
   );
 };
 
