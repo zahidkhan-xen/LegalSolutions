@@ -42,7 +42,6 @@ const ContactForm = () => {
     } finally {
       setIsSubmitting(false);
       setEmail("");
-      setName("");
       setDescription("");
       setLawFirmName(""); 
       event.target.reset();
@@ -55,12 +54,6 @@ const ContactForm = () => {
         <div className="card mx-auto max-w-lg p-8 bg-blue-50 border border-gray-200 shadow-md rounded-lg">
           <div className="card-body">
             <h5 className="text-2xl font-bold mb-4 text-center">Contact Us</h5>
-            {/* <p className="mb-8 text-center">
-              Please fill out the form below to book a reservation through
-              Ehsaan Voice AI. Our AI voice agent will contact you shortly to
-              confirm the details.
-            </p> */}
-
             {message && (
               <p className="mb-4 text-center text-green-500">{message}</p>
             )}
@@ -121,11 +114,17 @@ const ContactForm = () => {
               </div>
 
               <div className="mb-6">
+              <label
+                  htmlFor="text"
+                  className="block text-gray-700 text-left mb-2"
+                >
+                  Description
+                </label>
                 <textarea
                   className="w-full p-2 border border-gray-300 h-32 rounded-lg focus:ring-2 focus:ring-blue-500"
                   id="description"
                   placeholder="Brief description of interest..."
-                  value={description} // Ensure this state variable is set correctly
+                  value={description} 
                   onChange={(e) => setDescription(e.target.value)}
                   required
                 />

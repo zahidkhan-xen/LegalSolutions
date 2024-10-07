@@ -24,7 +24,7 @@ const Clients = () => {
             />
           </div>
 
-          <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 justify-between items-center w-full h-64 bg-white">
+          <div className="flex justify-between items-center w-full h-64 bg-white">
             <div>
               <img
                 src={LucsonLogo}

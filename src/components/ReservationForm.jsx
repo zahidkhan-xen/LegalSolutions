@@ -7,7 +7,6 @@ const baseUrl = import.meta.env.VITE_API_BASE_URL;
 const ReservationForm = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [name, setName] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -22,7 +21,6 @@ const ReservationForm = ({ isOpen, onClose }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name,
           email,
           phone,
         }),
@@ -30,11 +28,11 @@ const ReservationForm = ({ isOpen, onClose }) => {
 
       if (response.ok) {
         setMessage(
-          "Reservation request sent successfully. The AI voice agent will contact you soon!"
+          "Appointment request sent successfully. The AI voice agent will contact you soon!"
         );
       } else {
         const errorData = await response.json();
-        setMessage(`Failed to send reservation request: ${errorData.message}`);
+        setMessage(`Failed to send appointment request: ${errorData.message}`);
       }
     } catch (error) {
       setMessage(`Error occurred: ${error.message}`);
@@ -42,7 +40,6 @@ const ReservationForm = ({ isOpen, onClose }) => {
       setIsSubmitting(false);
       setEmail("");
       setPhone("");
-      setName("");
       e.target.reset();
     }
   };
@@ -81,24 +78,6 @@ const ReservationForm = ({ isOpen, onClose }) => {
             )}
 
             <form id="contactForm" onSubmit={handleSubmit}>
-              {/* <div className="mb-6">
-                <label
-                  htmlFor="name"
-                  className="block text-gray-700 text-left mb-2"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                  id="name"
-                  placeholder="Enter your name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                />
-              </div> */}
-
               <div className="mb-6">
                 <label
                   htmlFor="email"
@@ -138,7 +117,7 @@ const ReservationForm = ({ isOpen, onClose }) => {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-500"
+                  className="btn-solid-lg"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Submitting..." : "Book Appointment"}
