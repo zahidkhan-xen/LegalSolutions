@@ -50,7 +50,7 @@ const Header = () => {
     <header className="header py-28 text-center md:pt-36 lg:text-center xl:pt-44 xl:pb-32">
       <div className="container px-4 sm:px-8 lg:grid lg:gap-x-8">
         <div className="text-center">
-          <h1 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-gray-800 leading-snug">
+          <h1 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-gray-800 leading-snug mb-2">
             Let AI eliminate manual contract reviews and boost client engagement
           </h1>
           <h2 className="font-bold text-xl sm:text-2xl lg:text-3xl text-gray-800 leading-snug">
@@ -59,7 +59,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-20 lg:mx-12">
+      <div className="px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-20 lg:mx-12 mt-12">
         <div className="flex flex-col justify-center text-left lg:text-left xl:mr-12">
           <ul className="lg:list-disc">
             <li>
@@ -105,7 +105,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-y-4 lg:gap-x-12 mt-16 items-center justify-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-y-4 lg:gap-x-6 mt-16 items-center justify-center">
         <div className="lg:text-right sm:text-center text-center">
           <button
             className="btn-solid-lg"

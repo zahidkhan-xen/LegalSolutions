@@ -1,6 +1,6 @@
-import LucsonLogo from "../assets/images/LucsonLogo.svg";
 import MarzLogo from "../assets/images/MarzLogo.png";
 import AveticsLogo from "../assets/images/AveticsLogo.png";
+import LucsonLogo2 from "../assets/images/LucsonLogo2.png";
 
 const Clients = () => {
   return (
@@ -23,16 +23,16 @@ const Clients = () => {
               className="max-w-full max-h-full"
             />
           </div>
-          <div className="flex justify-between items-center w-full h-64 bg-white">
+          <div className="flex items-center w-full h-64 bg-white">
             <div>
               <img
-                src={LucsonLogo}
+                src={LucsonLogo2}
                 alt="Image 3"
                 className="max-w-full max-h-full"
               />
             </div>
             <div>
-              <h1 className="text-5xl font-bold text-red-600 m-0">Lucson</h1>
+              <h1 className="text-5xl font-bold text-red-600 mr-4">Lucson</h1>
             </div>
           </div>
         </div>

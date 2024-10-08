@@ -22,7 +22,7 @@ const testimonials = [
 
 const Testimonial = () => {
     return (
-      <div className="py-32">
+      <div className="py-24">
         <div className="container px-4 sm:px-8">
           <h2 className="mb-12 text-center text-4xl font-bold lg:max-w-5xl lg:mx-auto">
             What our Clients are saying

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai"; // Import close icon from react-icons
 import toast from "react-hot-toast";
 
@@ -9,6 +9,20 @@ const ReservationForm = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    // Lock the background scroll when the modal is open
+    if (isOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+    
+    // Clean up on component unmount
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [isOpen]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,13 +74,13 @@ const ReservationForm = ({ isOpen, onClose }) => {
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 mt-12"
           onClick={handleOverlayClick} // Add click event handler
         >
-          <div className="bg-blue-50 border border-gray-200 shadow-md rounded-lg p-8 max-w-md w-full h-[440px] relative overflow-hidden">
+          <div className="bg-blue-50 border border-gray-200 shadow-md rounded-lg p-8 max-w-md w-full h-[50vh] relative overflow-hidden">
             {/* Close Icon */}
             <button
               onClick={onClose}
               className="absolute top-4 right-4 text-gray-700 hover:text-gray-900"
             >
-              <AiOutlineClose size={24} />
+              <AiOutlineClose size={14} />
             </button>
 
             <h5 className="text-2xl font-bold mb-4 text-center">
