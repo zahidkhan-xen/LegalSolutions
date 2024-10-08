@@ -5,14 +5,15 @@ import toast from "react-hot-toast";
 
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
-const ReservationForm = ({ isOpen, onClose }) => {
+// eslint-disable-next-line no-unused-vars
+const ReservationForm = ({ isVoiceOpen, onClose }) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     // Lock the background scroll when the modal is open
-    if (isOpen) {
+    if (isVoiceOpen) {
       document.body.classList.add('overflow-hidden');
     } else {
       document.body.classList.remove('overflow-hidden');
@@ -22,7 +23,7 @@ const ReservationForm = ({ isOpen, onClose }) => {
     return () => {
       document.body.classList.remove('overflow-hidden');
     };
-  }, [isOpen]);
+  }, [isVoiceOpen]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -68,7 +69,7 @@ const ReservationForm = ({ isOpen, onClose }) => {
 
   return (
     <div>
-      {isOpen && (
+      {isVoiceOpen && (
         <div
           id="overlay" // Overlay id for click detection
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 mt-12"
@@ -84,7 +85,7 @@ const ReservationForm = ({ isOpen, onClose }) => {
             </button>
 
             <h5 className="text-2xl font-bold mb-4 text-center">
-              Book Your Appointment
+              Book An Appointment
             </h5>
           
             <form id="contactForm" onSubmit={handleSubmit}>
@@ -130,7 +131,7 @@ const ReservationForm = ({ isOpen, onClose }) => {
                   className="btn-solid-lg"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Submitting..." : "Book Appointment"}
+                  {isSubmitting ? "Submitting..." : "Voice AI Demo Call"}
                 </button>
               </div>
             </form>

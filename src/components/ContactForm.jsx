@@ -44,6 +44,7 @@ const ContactForm = () => {
       setEmail("");
       setDescription("");
       setLawFirmName(""); 
+      setName("");
       event.target.reset();
     }
   };
