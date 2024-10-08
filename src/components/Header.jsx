@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from "react";
 import ReservationForm from "./ReservationForm"; // Import the reservation form component
-import Streamlit from "../assets/images/Streamlit.mp4"
+import Streamlit2 from "../assets/images/Streamlit2.mp4"
 const Header = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false); // Modal state
@@ -96,7 +96,7 @@ const Header = () => {
             <div className="relative pb-[40.25%] mx-20 mt-10 overflow-hidden">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src={Streamlit}
+                src={Streamlit2}
                 frameBorder="0"
                 allow="autoplay; fullscreen"
                 allowFullScreen
