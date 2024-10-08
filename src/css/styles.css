@@ -148,6 +148,28 @@ h6 {
     text-decoration: none;
 }
 
+.btn-solid-sm {
+    display: inline-block;
+    padding: 1.625rem 2.75rem 1.625rem 2.75rem;
+    border: 1px solid black; /* Black border */
+    border-radius: 32px;
+    background: transparent; /* Transparent background */
+    color: black; /* Black text */
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 0;
+    text-decoration: none;
+    transition: all 0.2s;
+    margin-right: 0.25rem;
+    margin-bottom: 1.25rem;
+    margin-left: 0.25rem;
+}
+
+.btn-solid-sm:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Slight black background on hover */
+}
+
+
 
 
 .list .fas {

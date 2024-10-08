@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai"; // Import close icon from react-icons
+import toast from "react-hot-toast";
 
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
@@ -8,14 +9,13 @@ const ReservationForm = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${baseUrl}/voice-agent/calls/restaurant`, {
+      const response = await fetch(`${baseUrl}/voice-agent/calls/legal`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,15 +27,15 @@ const ReservationForm = ({ isOpen, onClose }) => {
       });
 
       if (response.ok) {
-        setMessage(
+        toast.success(
           "Appointment request sent successfully. The AI voice agent will contact you soon!"
         );
       } else {
         const errorData = await response.json();
-        setMessage(`Failed to send appointment request: ${errorData.message}`);
+        toast.error(`Failed to send appointment request: ${errorData.message}`);
       }
     } catch (error) {
-      setMessage(`Error occurred: ${error.message}`);
+      toast.error(`Error occurred: ${error.message}`);
     } finally {
       setIsSubmitting(false);
       setEmail("");
@@ -72,11 +72,7 @@ const ReservationForm = ({ isOpen, onClose }) => {
             <h5 className="text-2xl font-bold mb-4 text-center">
               Book Your Appointment
             </h5>
-
-            {message && (
-              <p className="mb-4 text-center text-green-500">{message}</p>
-            )}
-
+          
             <form id="contactForm" onSubmit={handleSubmit}>
               <div className="mb-6">
                 <label

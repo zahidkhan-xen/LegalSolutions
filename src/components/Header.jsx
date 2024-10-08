@@ -49,12 +49,13 @@ const Header = () => {
   return (
     <header className="header py-28 text-center md:pt-36 lg:text-center xl:pt-44 xl:pb-32">
       <div className="container px-4 sm:px-8 lg:grid lg:gap-x-8">
-        <div>
-          <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-8">
+        <div className="text-center">
+          <h1 className="font-bold text-2xl sm:text-3xl lg:text-4xl text-gray-800 leading-snug">
             Let AI eliminate manual contract reviews and boost client engagement
-            <br className="hidden sm:block" />– so you can focus on scaling your
-            legal firm
           </h1>
+          <h2 className="font-bold text-xl sm:text-2xl lg:text-3xl text-gray-800 leading-snug">
+            – so you can focus on scaling your legal firm
+          </h2>
         </div>
       </div>
 
@@ -63,17 +64,20 @@ const Header = () => {
           <ul className="lg:list-disc">
             <li>
               <h1 className="font-medium text-xl mb-5">
-                Automate Contract review - Reduce your non-billable time by up to 25%
+                Automate Contract review - Reduce your non-billable time by up
+                to 25%
               </h1>
             </li>
             <li>
               <h1 className="font-medium text-xl mb-5">
-                Automate appointment scheduling - Never miss a potential client&apos;s call again
+                Automate appointment scheduling - Never miss a potential
+                client&apos;s call again
               </h1>
             </li>
             <li>
               <h1 className="font-medium text-xl mb-5">
-                Enhance Customer service - Boost customer&apos;s engagement by up to 35% through our chatbot.
+                Enhance Customer service - Boost customer&apos;s engagement by
+                up to 35% through our chatbot.
               </h1>
             </li>
             <li>
@@ -112,16 +116,14 @@ const Header = () => {
         </div>
 
         <div className="lg:text-left sm:text-center text-center">
-          <button className="btn-solid-lg" onClick={toggleChatbot}>
+          <button className="btn-solid-sm" onClick={toggleChatbot}>
             Voice AI scheduling Demo
           </button>
         </div>
       </div>
 
       {/* Modal with Reservation Form */}
-      {isOpen && (
-        <ReservationForm isOpen={isOpen} onClose={closeModal} />
-      )}
+      {isOpen && <ReservationForm isOpen={isOpen} onClose={closeModal} />}
     </header>
   );
 };
