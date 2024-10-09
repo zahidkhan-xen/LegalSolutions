@@ -42,6 +42,7 @@ const ReservationForm = ({ isVoiceOpen, onClose }) => {
         toast.success(
           "Appointment request sent successfully. The AI voice agent will contact you soon!"
         );
+        onClose();
       } else {
         const errorData = await response.json();
         toast.error(`Failed to send appointment request: ${errorData.message}`);

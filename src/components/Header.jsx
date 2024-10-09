@@ -15,84 +15,80 @@ const Header = () => {
   const closeVoiceModal = () => setIsVoiceOpen(false);
 
   return (
-    <header className="header py-18 text-center md:pt-36  lg:text-center xl:pt-44 xl:pb-32">
-      <div className="sm:px-8 lg:grid lg:gap-x-8">
-        <div>
-          <h1 className="font-bold text-2xl sm:text-3xl lg:text-6xl mb-4">
-            Automate Your Contract Reviews with AI
-          </h1>
-          <h2 className="font-semibold text-xl sm:text-2xl lg:text-3xl mb-4">
-            Save time, reduce manual work, and enhance client engagement
-          </h2>
-        </div>
+    <header className="header py-12 text-center md:pt-20 lg:text-center xl:pt-28 xl:pb-8">
+    <div className="sm:px-8 lg:grid lg:gap-x-8">
+      <div>
+        <h1 className="font-bold text-2xl sm:text-3xl lg:text-5xl mb-2">
+          Automate Your Contract Reviews with AI
+        </h1>
+        <h2 className="font-semibold text-xl sm:text-2xl lg:text-3xl mb-2">
+          Save time, reduce manual work, and enhance client engagement
+        </h2>
       </div>
-
-      <div className="px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-20 lg:mx-12 mt-2">
-        <div className="flex flex-col justify-center text-center sm:text-center md:text-center lg:text-left xl:mr-12">
-          <ul className="lg:list-disc">
-            <li>
-              <h1 className="font-medium text-xl mb-5">
-                Enhance operational efficiency by streamlining document
-                workflows
-              </h1>
-            </li>
-            <li>
-              <h1 className="font-medium text-xl mb-5">
-                Deliver personalized client experiences through intelligent,
-                responsive communication{" "}
-              </h1>
-            </li>
-            <li>
-              <h1 className="font-medium text-xl mb-5">
-                Never miss a potential lead with automated call scheduling{" "}
-              </h1>
-            </li>
-
-            <li>
-              <h1 className="font-medium text-xl mb-5">
-                Seamless AI integration for your business
-              </h1>
-            </li>
-          </ul>
-        </div>
-
-        {/* Optional Image Placeholder */}
-        <div className="flex justify-center items-center mb-8 lg:mb-0">
-          <div id="reservation" className="w-full">
-            <div className="relative pb-[40.25%] mx-20 mt-10 overflow-hidden">
-              <iframe
-                className="absolute top-0 left-0 w-full h-full"
-                src={Streamlit2}
-                frameBorder="0"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-                title="Embedded YouTube Video"
-              ></iframe>
-            </div>
+    </div>
+  
+    <div className="px-4 sm:px-8 lg:grid lg:grid-cols-2 lg:gap-x-20 lg:mx-12 mt-2">
+      <div className="flex flex-col justify-center text-center sm:text-center md:text-center lg:text-left xl:mr-12">
+        <ul className="lg:list-disc">
+          <li>
+            <h1 className="font-medium text-xl mb-4">
+              Enhance operational efficiency by streamlining document workflows
+            </h1>
+          </li>
+          <li>
+            <h1 className="font-medium text-xl mb-4">
+              Deliver personalized client experiences through intelligent, responsive communication
+            </h1>
+          </li>
+          <li>
+            <h1 className="font-medium text-xl mb-4">
+              Never miss a potential lead with automated call scheduling
+            </h1>
+          </li>
+          <li>
+            <h1 className="font-medium text-xl mb-4">
+              Seamless AI integration for your business
+            </h1>
+          </li>
+        </ul>
+      </div>
+  
+      <div className="flex justify-center items-center mb-6 lg:mb-0">
+        <div id="reservation" className="w-full">
+          <div className="relative pb-[40.25%] mx-10 mt-6 overflow-hidden">
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src={Streamlit2}
+              frameBorder="0"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              title="Embedded Video"
+            ></iframe>
           </div>
         </div>
       </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-y-4 lg:gap-x-6 mt-11 items-center justify-center">
-        <div className="lg:text-right sm:text-center text-center">
-          <button className="btn-solid-lg" onClick={openModal}>
-            Book a Discovery Call
-          </button>
-        </div>
-
-        <div className="lg:text-left sm:text-center text-center">
-          <button className="btn-solid-sm" onClick={openVoiceModal}>
-            Voice AI scheduling Demo
-          </button>
-        </div>
+    </div>
+  
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-y-4 lg:gap-x-6 mt-10 items-center justify-center">
+      <div className="lg:text-right sm:text-center text-center">
+        <button className="btn-solid-lg" onClick={openModal}>
+          Book a Discovery Call
+        </button>
       </div>
-      <CalendlyModal isOpen={isOpen} onClose={closeModal} />
-
-      {/* Modal with Reservation Form */}
-      {isVoiceOpen && (
-        <ReservationForm isVoiceOpen={isVoiceOpen} onClose={closeVoiceModal} />
-      )}
-    </header>
+  
+      <div className="lg:text-left sm:text-center text-center">
+        <button className="btn-solid-sm" onClick={openVoiceModal}>
+          Voice AI scheduling Demo
+        </button>
+      </div>
+    </div>
+    <CalendlyModal isOpen={isOpen} onClose={closeModal} />
+  
+    {isVoiceOpen && (
+      <ReservationForm isVoiceOpen={isVoiceOpen} onClose={closeVoiceModal} />
+    )}
+  </header>
+  
   );
 };
 

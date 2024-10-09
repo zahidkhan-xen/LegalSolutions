@@ -24,8 +24,8 @@ const Testimonial = () => {
     return (
       <div className="py-10">
         <div className="container px-4 sm:px-8">
-          <h2 className="mb-12 text-center text-4xl font-bold lg:max-w-5xl lg:mx-auto">
-            What our Clients are saying
+          <h2 className="mb-12 text-center text-3xl font-bold lg:max-w-5xl lg:mx-auto">
+            WHAT OUR CLIENTS ARE SAYING
           </h2>
   
           <Swiper
@@ -46,13 +46,13 @@ const Testimonial = () => {
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
-                <div className="card flex flex-col items-center justify-center px-14">
+                <div className="card flex flex-col items-center justify-center px-14 mx-auto">
                   <img
                     className="card-image w-24 h-24 rounded-full object-cover mb-4"
                     src={testimonial.image}
                     alt={`Testimonial ${index + 1}`}
                   />
-                  <div className="text-center w-lg">
+                  <div className="text-center w-full">
                     <p className="italic mb-3 text-gray-700">{testimonial.text}</p>
                     <p className="font-semibold text-gray-900">{testimonial.author}</p>
                     <p className="text-gray-700">{testimonial.company}</p>
