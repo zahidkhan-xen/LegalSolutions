@@ -15,7 +15,7 @@ const Header = () => {
   const closeVoiceModal = () => setIsVoiceOpen(false);
 
   return (
-    <header className="header py-12 text-center md:pt-20 lg:text-center xl:pt-28 xl:pb-8">
+    <header className="header py-12 mt-[20px] text-center md:pt-20 lg:text-center xl:pt-28 xl:pb-8">
     <div className="sm:px-8 lg:grid lg:gap-x-8">
       <div>
         <h1 className="font-bold text-2xl sm:text-3xl lg:text-5xl mb-2">
