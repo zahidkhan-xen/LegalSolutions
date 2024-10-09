@@ -1,27 +1,24 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
-import { AiOutlineClose } from "react-icons/ai"; // Import close icon from react-icons
+import { AiOutlineClose } from "react-icons/ai";
 import toast from "react-hot-toast";
 
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
-// eslint-disable-next-line no-unused-vars
 const ReservationForm = ({ isVoiceOpen, onClose }) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
-    // Lock the background scroll when the modal is open
     if (isVoiceOpen) {
-      document.body.classList.add('overflow-hidden');
+      document.body.classList.add("overflow-hidden");
     } else {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     }
-    
-    // Clean up on component unmount
+
     return () => {
-      document.body.classList.remove('overflow-hidden');
+      document.body.classList.remove("overflow-hidden");
     };
   }, [isVoiceOpen]);
 
@@ -59,9 +56,7 @@ const ReservationForm = ({ isVoiceOpen, onClose }) => {
     }
   };
 
-  // Function to handle clicks on the overlay to close the modal
   const handleOverlayClick = (e) => {
-    // Close the modal only if the click is on the overlay
     if (e.target.id === "overlay") {
       onClose();
     }
@@ -71,12 +66,12 @@ const ReservationForm = ({ isVoiceOpen, onClose }) => {
     <div>
       {isVoiceOpen && (
         <div
-          id="overlay" // Overlay id for click detection
+          id="overlay" 
           className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 mt-12"
-          onClick={handleOverlayClick} // Add click event handler
+          onClick={handleOverlayClick} 
         >
           <div className="bg-blue-50 border border-gray-200 shadow-md rounded-lg p-8 max-w-md w-full h-[50vh] relative overflow-hidden">
-            {/* Close Icon */}
+           
             <button
               onClick={onClose}
               className="absolute top-4 right-4 text-gray-700 hover:text-gray-900"
@@ -87,7 +82,7 @@ const ReservationForm = ({ isVoiceOpen, onClose }) => {
             <h5 className="text-2xl font-bold mb-4 text-center">
               Book An Appointment
             </h5>
-          
+
             <form id="contactForm" onSubmit={handleSubmit}>
               <div className="mb-6">
                 <label

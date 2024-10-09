@@ -6,36 +6,37 @@ const Clients = () => {
   return (
     <div className="px-4 sm:px-8 lg:px-16 bg-gray-100">
       <div className="flex flex-col justify-center text-center lg:text-center xl:mr-12">
-        <h1 className="text-4xl my-12 mb-5 font-bold">TRUSTED BY</h1>
+        <h1 className="text-4xl mt-6 mb-5 font-bold">TRUSTED BY</h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
-          <div className="flex justify-center items-center w-full h-64 bg-white">
-            <img
-              src={MarzLogo}
-              alt="Image 1"
-              className="max-w-full max-h-full"
-            />
-          </div>
-          <div className="flex justify-center items-center w-full h-64 bg-white">
-            <img
-              src={AveticsLogo}
-              alt="Image 2"
-              className="max-w-full max-h-full"
-            />
-          </div>
-          <div className="flex items-center w-full h-64 bg-white">
-            <div>
-              <img
-                src={LucsonLogo2}
-                alt="Image 3"
-                className="max-w-full max-h-full"
-              />
-            </div>
-            <div>
-              <h1 className="text-5xl font-bold text-red-600 mr-4">Lucson</h1>
-            </div>
-          </div>
-        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 my-8 justify-center mx-auto">
+  <div className="flex justify-center items-center w-72 h-40 bg-white">
+    <img
+      src={MarzLogo}
+      alt="Image 1"
+      className="max-w-full max-h-full"
+    />
+  </div>
+  <div className="flex justify-center items-center w-72 h-40 bg-white">
+    <img
+      src={AveticsLogo}
+      alt="Image 2"
+      className="max-w-full max-h-full"
+    />
+  </div>
+  <div className="flex items-center justify-between w-72 h-40 bg-white">
+    <div>
+      <img
+        src={LucsonLogo2}
+        alt="Image 3"
+        className="max-w-full max-h-full"
+      />
+    </div>
+    <div>
+      <h1 className="text-5xl font-bold text-red-600 mr-4">Lucson</h1>
+    </div>
+  </div>
+</div>
+
       </div>
     </div>
   );
