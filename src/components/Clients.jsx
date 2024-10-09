@@ -1,6 +1,7 @@
 import MarzLogo from "../assets/images/MarzLogo.png";
 import AveticsLogo from "../assets/images/AveticsLogo.png";
 import LucsonLogo2 from "../assets/images/LucsonLogo2.png";
+import ELSS from "../assets/images/ELSS.png";
 
 const Clients = () => {
   return (
@@ -13,22 +14,29 @@ const Clients = () => {
         <h1 className="text-3xl mt-6 font-bold">TRUSTED BY</h1>
 
         {/* Client Logos */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 my-8 justify-center mx-auto">
-          <div className="flex justify-center items-center w-72 h-40 bg-white">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-4 my-8 justify-center mx-auto">
+          <div className="flex justify-center items-center w-full h-40 bg-white">
             <img
-              src={MarzLogo}
+              src={ELSS}
               alt="Image 1"
               className="max-w-full max-h-full"
             />
           </div>
-          <div className="flex justify-center items-center w-72 h-40 bg-white">
+          <div className="flex justify-center items-center w-full h-40 bg-white">
             <img
               src={AveticsLogo}
               alt="Image 2"
               className="max-w-full max-h-full"
             />
           </div>
-          <div className="flex items-center justify-between w-72 h-40 bg-white">
+          <div className="flex justify-center items-center w-full h-40 bg-white">
+            <img
+              src={MarzLogo}
+              alt="Image 2"
+              className="max-w-full max-h-full"
+            />
+          </div>
+          <div className="flex items-center justify-between w-full h-40 bg-white">
             <div>
               <img
                 src={LucsonLogo2}

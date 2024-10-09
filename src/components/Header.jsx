@@ -69,19 +69,20 @@ const Header = () => {
       </div>
     </div>
   
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-y-4 lg:gap-x-6 mt-10 items-center justify-center">
-      <div className="lg:text-right sm:text-center text-center">
-        <button className="btn-solid-lg" onClick={openModal}>
-          Book a Discovery Call
-        </button>
-      </div>
-  
-      <div className="lg:text-left sm:text-center text-center">
-        <button className="btn-solid-sm" onClick={openVoiceModal}>
-          Voice AI scheduling Demo
-        </button>
-      </div>
-    </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-y-4 lg:gap-x-12 md:gap-x-8 sm:gap-x-6 gap-x-4 mt-10 items-center justify-center">
+  <div className="lg:text-right sm:text-center text-center md:text-right">
+    <button className="btn-solid-lg" onClick={openModal}>
+      Book a Discovery Call
+    </button>
+  </div>
+
+  <div className="lg:text-left sm:text-center md:text-left  text-center">
+    <button className="btn-solid-sm" onClick={openVoiceModal}>
+      Voice AI scheduling Demo
+    </button>
+  </div>
+</div>
+
     <CalendlyModal isOpen={isOpen} onClose={closeModal} />
   
     {isVoiceOpen && (
