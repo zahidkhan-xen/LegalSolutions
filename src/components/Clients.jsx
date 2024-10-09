@@ -11,12 +11,12 @@ const Clients = () => {
         <h1 className="text-3xl mt-6 font-bold">TRUSTED BY</h1>
 
         {/* Client Logos */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-4 my-8 justify-center mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4 my-8 justify-center mx-auto">
           <div className="flex justify-center items-center w-full h-40 bg-white">
             <img
               src={ELSS}
               alt="Image 1"
-              className="max-w-full max-h-full mt-2"
+              className="max-w-full max-h-full mt-2 mb-1"
             />
           </div>
           <div className="flex justify-center items-center w-full h-40 bg-white">
