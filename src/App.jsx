@@ -10,7 +10,7 @@ import Testimonial from "./components/Testimonial";
 import Clients from "./components/Clients";
 import { useEffect, useState } from "react";
 import { logEvent } from "firebase/analytics";
-import { analytics } from "./firebaseConfig";
+import { analytics } from "../firebaseConfig";
 function App() {
 
   const [startTime, setStartTime] = useState(null); 
@@ -19,13 +19,13 @@ function App() {
     const enterTime = Date.now();
     setStartTime(enterTime);
 
-    console.log("User entered sketch pad at:", new Date(enterTime).toISOString());
+    console.log("Visitor entered squezze page at:", new Date(enterTime).toISOString());
 
     return () => {
       const leaveTime = Date.now();
       if (startTime) {
         const durationInMinutes = (leaveTime - startTime) / 60000; // Time in minutes
-        console.log(`User spent ${durationInMinutes.toFixed(2)} minutes on sketch pad.`);
+        console.log(`Visitor spent ${durationInMinutes.toFixed(2)} minutes on squeeze page.`);
 
         // Log the event to Firebase Analytics
         logEvent(analytics, 'Duration_SqueezePage', {

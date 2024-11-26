@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import toast from "react-hot-toast";
+import { analytics } from "../../firebaseConfig";
+import { logEvent } from "firebase/analytics";
 
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
@@ -42,6 +44,7 @@ const ReservationForm = ({ isVoiceOpen, onClose }) => {
         toast.success(
           "Appointment request sent successfully. The AI voice agent will contact you soon!"
         );
+        logEvent(analytics, "Reservation_Request");
         onClose();
       } else {
         const errorData = await response.json();

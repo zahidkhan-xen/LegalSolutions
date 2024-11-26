@@ -13,13 +13,13 @@ const Header = () => {
   const openModal = () => {
     
     setIsOpen(true);
-    logEvent(analytics,"Appointment_Reservation")
+    logEvent(analytics,"Discovery_Call")
   }
   const closeModal = () => setIsOpen(false);
 
   const openVoiceModal = () => {
     setIsVoiceOpen(true);
-    logEvent(analytics,"Discovery_Call");
+    logEvent(analytics,"VoiceAI_Demo");
   }
   const closeVoiceModal = () => setIsVoiceOpen(false);
 
