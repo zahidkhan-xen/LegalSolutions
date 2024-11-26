@@ -3,15 +3,24 @@ import React, { useState, useEffect } from "react";
 import ReservationForm from "./ReservationForm"; 
 import Streamlit2 from "../assets/images/Streamlit2.mp4";
 import CalendlyModal from "./CalendlyModal";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../../firebaseConfig";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false); 
   const [isVoiceOpen, setIsVoiceOpen] = useState(false); 
 
-  const openModal = () => setIsOpen(true);
+  const openModal = () => {
+    
+    setIsOpen(true);
+    logEvent(analytics,"Appointment_Reservation")
+  }
   const closeModal = () => setIsOpen(false);
 
-  const openVoiceModal = () => setIsVoiceOpen(true);
+  const openVoiceModal = () => {
+    setIsVoiceOpen(true);
+    logEvent(analytics,"Discovery_Call");
+  }
   const closeVoiceModal = () => setIsVoiceOpen(false);
 
   return (

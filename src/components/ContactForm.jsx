@@ -1,5 +1,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../../firebaseConfig";
 
 const baseUrl = import.meta.env.VITE_API_BASE_URL;
 
@@ -30,6 +32,7 @@ const ContactForm = () => {
       });
 
       if (response.ok) {
+        logEvent(analytics,"Form_Submit")
         toast.success(
           "Thank you for contacting us! Your message has been successfully sent, and our team will get back to you shortly."
         );
