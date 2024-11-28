@@ -4,7 +4,7 @@ const Copyright = () => {
       <div className="flex justify-center">
         <p className="pb-2 p-small statement">
           Copyright ©{' '}
-          <a href="#your-link" className="no-underline">
+          <a href="https://ehsaantech.com/" className="no-underline text-yellow-400">
             Ehsaan Technologies
           </a>
         </p>

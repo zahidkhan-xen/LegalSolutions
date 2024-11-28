@@ -127,46 +127,46 @@ h6 {
 
 .btn-solid-lg {
     display: inline-block;
-    padding: 1.625rem 2.75rem 1.625rem 2.75rem;
-    border: 1px solid transparent; /* Transparent border */
-    border-radius: 32px;
-    background: linear-gradient(90deg, #8a4ddd, #2575fc); /* Softer gradient from purple to blue */
-    color: #ffffff;
-    font-weight: 600;
+    padding: 1rem 2rem;
+    background-color: #fbbf24; /* Yellow-400 equivalent */
+    color: #3730a3; /* Indigo-900 for text */
+    font-weight: bold;
     font-size: 0.875rem;
-    line-height: 0;
+    line-height: 1.25rem;
     text-decoration: none;
-    transition: all 0.2s;
-    margin-right: 0.25rem;
-    margin-bottom: 1.25rem;
-    margin-left: 0.25rem;
-}
+    border-radius: 9999px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-solid-lg:hover {
+    background-color: #dab36e; /* Yellow-500 equivalent */
+    transform: scale(1.05);
+  }
 
-.btn-solid-lg:hover {
-    background: linear-gradient(90deg, #2575fc, #8a4ddd); /* Reverse gradient on hover */
-    color: #ffffff;
-    text-decoration: none;
-}
 
 .btn-solid-sm {
     display: inline-block;
-    padding: 1.625rem 2.75rem 1.625rem 2.75rem;
+    padding: 1rem 2rem;
     border: 1px solid black; /* Black border */
-    border-radius: 32px;
     background: transparent; /* Transparent background */
     color: black; /* Black text */
-    font-weight: 600;
     font-size: 0.875rem;
-    line-height: 0;
+    font-weight: bold;
     text-decoration: none;
-    transition: all 0.2s;
-    margin-right: 0.25rem;
-    margin-bottom: 1.25rem;
-    margin-left: 0.25rem;
+
+    line-height: 1.25rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    border-radius: 9999px;
 }
 
 .btn-solid-sm:hover {
     background-color: rgba(0, 0, 0, 0.1); /* Slight black background on hover */
+    transform: scale(1.05);
+
 }
 
 
@@ -408,16 +408,32 @@ input[type="checkbox"] {
 /**********************/
 
 .navbar {
-    position: relative;
-    background-color: #f1f9fc;
-    padding: 0.5rem 1rem;
-    flex-flow: row wrap;
+    /* position: relative; */
+    /* background-color: #f1f9fc; */
+    /* padding: 0.5rem 1rem; */
+    /* flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     font-weight: 600;
     font-size: 0.875rem;
     line-height: 0.75rem;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease; */
+}
+
+.headings {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    color: #e21717;
+    font-size: 49px;
+    line-height: 63px;
+}
+.heading-color {
+background-color: #EEC545  ;
+}
+
+headings1 {
+    color: rgba(0, 0, 0, .5);
+
 }
 
 .fixed-top {
@@ -530,8 +546,9 @@ input[type="checkbox"] {
 /*    Header     */
 /*****************/
 .header {
-    background: linear-gradient(rgba(197, 234, 249, 1), rgba(255, 255, 255, 1));
+    background: linear-gradient(#ccccff, rgba(255, 255, 255, 1));
 }
+
 
 /**********************/
 /*     Conclusion     */
@@ -550,7 +567,6 @@ input[type="checkbox"] {
 .footer {
     padding-top: 6rem;
     padding-bottom: 3rem;
-    background: linear-gradient(rgba(255, 255, 255, 1), rgba(197, 234, 249, 1));
     text-align: center;
 }
 
@@ -588,9 +604,27 @@ input[type="checkbox"] {
 /*********************/
 .copyright {
     padding-top: 1.5rem;
-    background-color: #c5eaf9;
+    background-color: #12267d;
     text-align: center;
 }
+
+/* Add this CSS to your stylesheet */
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .pulse-btn {
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
 
 /******************************/
 /*     Back To Top Button     */
@@ -608,6 +642,16 @@ a.back-to-top {
     background-size: 18px 18px;
     text-indent: -9999px;
 }
+
+@keyframes spinOnce {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .spin-once {
+    animation: spinOnce 1s ease-in-out;
+  }
+  
 
 a:hover.back-to-top {
     background-color: #000000;
@@ -909,5 +953,16 @@ a:hover.back-to-top {
     border-right: 20px solid transparent;
     border-bottom: 20px solid #e5e7eb; /* gray-200 color */
 }
+@keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
   
   

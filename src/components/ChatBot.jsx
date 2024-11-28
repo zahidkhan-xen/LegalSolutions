@@ -1,5 +1,5 @@
 // import heroLogo from "../assets/images/chef-cartoon-png-clipart-removebg-preview.png";
-import chatbot from "../assets/images/chatbot.png"
+import Robot_bg from "../assets/images/Robot_bg.png";
 const ChatBot = () => {
     return (
     //   <header
@@ -26,7 +26,7 @@ const ChatBot = () => {
           </div>
           <div className="xl:text-right">
 
-            <img className="inline" src={chatbot} alt="alternative" />
+            <img className="inline" src={Robot_bg} alt="alternative" />
           
           </div>
         </div>
