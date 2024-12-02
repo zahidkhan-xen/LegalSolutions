@@ -28,7 +28,7 @@ const CallBookingSection = () => {
           </h2>
           <div className="text-center flex items-center justify-center">
         <button
-          className="btn-solid-lg text-lg"
+          className="btn-solid-lg text-lg text-black"
           onClick={openVoiceModal}
         >
           Schedule My Free Call!
@@ -36,7 +36,6 @@ const CallBookingSection = () => {
       </div>
         </div>
       </div>
-    
      
       {isVoiceOpen && (
         <ReservationForm isVoiceOpen={isVoiceOpen} onClose={closeVoiceModal} />

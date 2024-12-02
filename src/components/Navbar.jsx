@@ -1,24 +1,17 @@
 import logo from "../assets/images/ET-logo-removebg-preview.png";
-
-
-const Navbar = () =>{
-  return(
+const Navbar = () => {
+  return (
     <>
-    <div className="container p-4">     <img src={logo} className="w-16 h-18"/>
-
-    </div>
- 
+      <div className="container p-4">
+        <a href="https://ehsaantech.com/">
+          <img src={logo} alt="Ehsaantech Logo" className="w-16 h-16" />
+        </a>
+      </div>
     </>
-  )
-}
+  );
+};
 
 export default Navbar;
-
-
-
-
-
-
 
 // import logo from "../assets/images/ET-logo-removebg-preview.png";
 

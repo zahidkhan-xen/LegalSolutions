@@ -40,28 +40,28 @@ const HeroSection = () => {
       </div>
       <div className="max-w-7xl mx-auto grid gap-8 lg:grid-cols-2">
         {/* Left Section */}
-        <div className="bg-[#F7C948] rounded-3xl p-8">
-          <h1 className="text-4xl font-bold mb-8">
+        <div className="bg-[#F6CEFC] rounded-3xl p-8">
+          <h1 className="text-4xl font-bold mb-8 ">
             Streamline Appointments, Your Law Firm&apos;s AI-Powered Assistant.
           </h1>
 
           <div className="flex items-start space-x-3 mb-8">
-            <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-1" />
-            <p className="text-lg">
+            <CheckCircle className="h-6 w-6 text-white flex-shrink-0 mt-1" />
+            <p className="text-lg text-black">
               Save Time: Instant query handling improves client experience.
             </p>
           </div>
 
           <div className="flex items-start space-x-3 mb-8">
-            <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-1" />
-            <p className="text-lg">
+            <CheckCircle className="h-6 w-6 text-white flex-shrink-0 mt-1" />
+            <p className="text-lg text-black">
               Boost Conversions: Engage leads before they leave.
             </p>
           </div>
 
           <div className="flex items-start space-x-3 mb-8">
-            <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-1" />
-            <p className="text-lg">
+            <CheckCircle className="h-6 w-6 text-white flex-shrink-0 mt-1" />
+            <p className="text-lg text-black">
               Easy Integration: No need for a complete website redesign.
             </p>
           </div>
@@ -77,14 +77,13 @@ const HeroSection = () => {
             {/* <p className="text-gray-600 mb-6">{blogPreview.challenges[0]}</p> */}
 
             <div className="flex items-center justify-between">
-  <button
-    className="btn-solid-lg text-lg pulse-btn"
-    onClick={openVoiceModal}
-  >
-    Book a Call Now
-  </button>
-</div>
-
+              <button
+                className="btn-solid-lg text-lg pulse-btn text-black"
+                onClick={openVoiceModal}
+              >
+                Book a Call Now
+              </button>
+            </div>
           </div>
         </div>
 
@@ -130,7 +129,7 @@ const HeroSection = () => {
             </div>
             <button
               onClick={() => window.voiceflow.chat.open()}
-              className="btn-solid-lg text-lg"
+              className="btn-solid-lg text-lg text-black"
             >
               Interact with the Chatbot
             </button>

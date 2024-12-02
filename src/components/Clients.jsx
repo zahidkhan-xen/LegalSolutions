@@ -2,7 +2,6 @@ import MarzLogo from "../assets/images/MarzLogo.png";
 import AveticsLogo from "../assets/images/AveticsLogo.png";
 import LucsonLogo2 from "../assets/images/LucsonLogo2.png";
 import ELSS from "../assets/images/ELSS.png";
-
 const Clients = () => {
   return (
     <div className="px-4 sm:px-8 lg:px-16 bg-gray-200 relative">

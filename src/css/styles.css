@@ -128,7 +128,8 @@ h6 {
 .btn-solid-lg {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: #fbbf24; /* Yellow-400 equivalent */
+    background-color: #F6CEFC
+    ; /* Yellow-400 equivalent */
     color: #3730a3; /* Indigo-900 for text */
     font-weight: bold;
     font-size: 0.875rem;
@@ -140,7 +141,7 @@ h6 {
   }
   
   .btn-solid-lg:hover {
-    background-color: #dab36e; /* Yellow-500 equivalent */
+    background-color: #ededf4; /* Yellow-500 equivalent */
     transform: scale(1.05);
   }
 

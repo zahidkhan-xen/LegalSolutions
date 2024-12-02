@@ -135,7 +135,7 @@ const ReservationForm = ({ isVoiceOpen, onClose }) => {
 
             <button
               type="submit"
-              className="btn-solid-lg w-full flex items-center justify-center"
+              className="btn-solid-lg w-full flex items-center justify-center text-black"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
