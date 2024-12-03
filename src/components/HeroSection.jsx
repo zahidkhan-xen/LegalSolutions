@@ -78,7 +78,7 @@ const HeroSection = () => {
 
             <div className="flex items-center justify-between">
               <button
-                className="btn-solid-lg text-lg pulse-btn text-black"
+                className="animate-buttonheartbeat btn-solid-lg  text-lg text-black"
                 onClick={openVoiceModal}
               >
                 Book a Call Now
